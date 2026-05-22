@@ -1,0 +1,181 @@
+/* ==========================================================================
+   FAA BRAND UTILITIES & SYSTEM OVERRIDES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-dark: #0F0F11;
+    --bg-surface: #161619;
+    --text-light: #F5F5F7;
+    --text-muted: #A0A0AA;
+    --accent-gold: #D4AF37;
+    --accent-gold-hover: #F3E5AB;
+    --font-editorial: 'Cormorant Garamond', serif;
+    --font-ui: 'Plus Jakarta Sans', sans-serif;
+    --transition-premium: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-ui);
+    overflow-x: hidden;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, .brand-logo {
+    font-family: var(--font-editorial);
+    letter-spacing: 1px;
+}
+
+/* Premium Navbar Adjustment */
+.faa-navbar {
+    background: rgba(15, 15, 17, 0.85) !important;
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: var(--transition-premium);
+}
+
+.brand-logo {
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 6px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-link-faa {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light) !important;
+    opacity: 0.7;
+    transition: var(--transition-premium);
+}
+
+.nav-link-faa:hover, .nav-link-faa.active {
+    opacity: 1;
+    color: var(--accent-gold) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(15,15,17,0.95) 35%, rgba(15,15,17,0.2)), 
+                url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: calc(2.5rem + 2.5vw);
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+.hero-title span {
+    font-style: italic;
+    color: var(--accent-gold);
+}
+
+/* Buttons */
+.btn-faa {
+    background: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
+    padding: 0.8rem 2.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 0;
+    transition: var(--transition-premium);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-faa:hover {
+    color: var(--bg-dark);
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+/* Product Architecture Grid */
+.product-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-radius: 0;
+    transition: var(--transition-premium);
+    margin-bottom: 1.5rem;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.img-container {
+    position: relative;
+    padding-top: 135%; /* Premium Fashion Aspect Ratio */
+    overflow: hidden;
+}
+
+.img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+.product-meta-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.2rem;
+}
+
+.product-price-tag {
+    font-family: var(--font-editorial);
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+}
+
+/* Filters Sidebar */
+.filter-sidebar-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 0.5rem;
+}
+
+.filter-list-item {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: var(--transition-premium);
+    font-size: 0.95rem;
+}
+
+.filter-list-item:hover, .filter-list-item.active {
+    opacity: 1;
+    color: var(--accent-gold);
+    padding-left: 6px;
+}
+
+/* Dynamic Cart Badge Count */
+.cart-badge {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    font-size: 0.7rem;
+    border-radius: 50%;
+    padding: 0.25rem 0.45rem;
+    vertical-align: top;
+    margin-left: -5px;
+}
