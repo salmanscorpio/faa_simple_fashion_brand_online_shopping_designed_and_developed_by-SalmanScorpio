@@ -1,1 +1,4 @@
 # faa_simple_fashion_brand_online_shopping_designed_and_developed_by-SalmanScorpio
+
+
+Layout link: https://salmanscorpio.github.io/faa_simple_fashion_brand_online_shopping_designed_and_developed_by-SalmanScorpio/
